@@ -176,5 +176,17 @@ namespace Mythic_Game_Master_Emulator
             gme.FateModel.Threads.Clear();
             resetModelAndScroll();
         }
+
+        private void buttonRollCharacter_Click(object sender, EventArgs e)
+        {
+            gme.RollCharacterFromList();
+            resetModelAndScroll();
+        }
+
+        private void buttonRollThread_Click(object sender, EventArgs e)
+        {
+            gme.RollThreadFromList();
+            resetModelAndScroll();
+        }
     }
 }

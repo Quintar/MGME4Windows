@@ -77,7 +77,19 @@ namespace Mythic_Game_Master_Emulator
             myFm.Characters.AddRange(File.ReadAllLines(filename));
         }
 
+        public void RollCharacterFromList()
+        {
+            if (myFm.Characters.Count <= 0) return;
+            int roll = Random.Shared.Next(0, myFm.Characters.Count);
+            myFm.AddToAnswer("Character: " + myFm.Characters.GetRange(roll, 1)[0]);
+        }
 
+        public void RollThreadFromList()
+        {
+            if (myFm.Threads.Count <= 0) return;
+            int roll = Random.Shared.Next(0, myFm.Threads.Count);
+            myFm.AddToAnswer("Thread: " + myFm.Threads.GetRange(roll, 1)[0]);
+        }
 
         public void RollAgainstChaosFactor()
         {

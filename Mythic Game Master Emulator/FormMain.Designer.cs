@@ -77,6 +77,8 @@
             openFileDialogThreads = new OpenFileDialog();
             buttonClearCharacters = new Button();
             buttonClearThreads = new Button();
+            buttonRollCharacter = new Button();
+            buttonRollThread = new Button();
             ((System.ComponentModel.ISupportInitialize)questionListBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fateModelBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chaosFactorsBindingSource).BeginInit();
@@ -481,11 +483,33 @@
             buttonClearThreads.UseVisualStyleBackColor = true;
             buttonClearThreads.Click += buttonClearThreads_Click;
             // 
+            // buttonRollCharacter
+            // 
+            buttonRollCharacter.Location = new Point(794, 343);
+            buttonRollCharacter.Name = "buttonRollCharacter";
+            buttonRollCharacter.Size = new Size(75, 23);
+            buttonRollCharacter.TabIndex = 26;
+            buttonRollCharacter.Text = "Roll";
+            buttonRollCharacter.UseVisualStyleBackColor = true;
+            buttonRollCharacter.Click += buttonRollCharacter_Click;
+            // 
+            // buttonRollThread
+            // 
+            buttonRollThread.Location = new Point(950, 343);
+            buttonRollThread.Name = "buttonRollThread";
+            buttonRollThread.Size = new Size(75, 23);
+            buttonRollThread.TabIndex = 27;
+            buttonRollThread.Text = "Roll";
+            buttonRollThread.UseVisualStyleBackColor = true;
+            buttonRollThread.Click += buttonRollThread_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1030, 374);
+            Controls.Add(buttonRollThread);
+            Controls.Add(buttonRollCharacter);
             Controls.Add(buttonClearThreads);
             Controls.Add(buttonClearCharacters);
             Controls.Add(listBoxThreadsList);
@@ -578,5 +602,7 @@
         private OpenFileDialog openFileDialogThreads;
         private Button buttonClearCharacters;
         private Button buttonClearThreads;
+        private Button buttonRollCharacter;
+        private Button buttonRollThread;
     }
 }
