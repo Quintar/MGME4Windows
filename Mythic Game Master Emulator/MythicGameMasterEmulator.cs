@@ -67,6 +67,18 @@ namespace Mythic_Game_Master_Emulator
             myFm.AddToAnswer(File.ReadAllText(filename));
         }
 
+        public void SetThreadsFrom(string filename)
+        {
+            myFm.Threads.AddRange(File.ReadAllLines(filename));
+        }
+
+        public void SetCharactersFrom(string filename)
+        {
+            myFm.Characters.AddRange(File.ReadAllLines(filename));
+        }
+
+
+
         public void RollAgainstChaosFactor()
         {
             int roll = myFm.Roll1Dice;
@@ -81,6 +93,26 @@ namespace Mythic_Game_Master_Emulator
         public void RollPercentileDice()
         {
             myFm.AddToAnswer("Roll percentile result: " + myFm.RollDice.ToString());
+        }
+
+        public void AddCharacter(string character)
+        {
+            myFm.Characters.Add(character);
+        }
+
+        public void RemoveCharacter(string character)
+        {
+            myFm.Characters.Remove(character);
+        }
+
+        public void AddThread(string thread)
+        {
+            myFm.Threads.Add(thread);
+        }
+
+        public void RemoveThread(string thread)
+        {
+            myFm.Threads.Remove(thread);
         }
     }
 }

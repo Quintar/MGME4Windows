@@ -38,6 +38,9 @@ namespace Mythic_Game_Master_Emulator
             private set { odds = value; }
         }
 
+        public List<string> Characters {  get; set; } = new List<string>();
+        public List<string> Threads { get; set; } = new List<string>();
+
         private List<Odds> oddsList = new List<Odds>();
         private List<ChaosFactor> chaosFactors = new List<ChaosFactor>();
         private List<string> questionList = new List<string>();

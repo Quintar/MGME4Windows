@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             labelFateQuestion = new Label();
             comboBoxFateQuestion = new ComboBox();
             questionListBindingSource = new BindingSource(components);
@@ -51,18 +52,38 @@
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             saveAnswersToolStripMenuItem = new ToolStripMenuItem();
+            saveCharacterListToolStripMenuItem = new ToolStripMenuItem();
+            saveThreadListToolStripMenuItem = new ToolStripMenuItem();
             loadAnswersToolStripMenuItem = new ToolStripMenuItem();
+            loadCharacterListToolStripMenuItem = new ToolStripMenuItem();
+            loadThreadListToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             quitToolStripMenuItem = new ToolStripMenuItem();
             saveFileDialogAnswers = new SaveFileDialog();
             openFileDialogAnswers = new OpenFileDialog();
             buttonRollAgainstChaosFactor = new Button();
             buttonRollPercentile = new Button();
+            labelCharacterList = new Label();
+            labelThreadList = new Label();
+            textBoxCharacter = new TextBox();
+            listBoxCharacters = new ListBox();
+            charactersBindingSource = new BindingSource(components);
+            textBoxThread = new TextBox();
+            listBoxThreadsList = new ListBox();
+            threadsBindingSource = new BindingSource(components);
+            saveFileDialogCharacters = new SaveFileDialog();
+            saveFileDialogThreads = new SaveFileDialog();
+            openFileDialogCharacters = new OpenFileDialog();
+            openFileDialogThreads = new OpenFileDialog();
+            buttonClearCharacters = new Button();
+            buttonClearThreads = new Button();
             ((System.ComponentModel.ISupportInitialize)questionListBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fateModelBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chaosFactorsBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)oddsListBindingSource).BeginInit();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)charactersBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)threadsBindingSource).BeginInit();
             SuspendLayout();
             // 
             // labelFateQuestion
@@ -76,12 +97,11 @@
             // 
             // comboBoxFateQuestion
             // 
-            comboBoxFateQuestion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             comboBoxFateQuestion.DataSource = questionListBindingSource;
             comboBoxFateQuestion.FormattingEnabled = true;
             comboBoxFateQuestion.Location = new Point(5, 47);
             comboBoxFateQuestion.Name = "comboBoxFateQuestion";
-            comboBoxFateQuestion.Size = new Size(802, 23);
+            comboBoxFateQuestion.Size = new Size(697, 23);
             comboBoxFateQuestion.TabIndex = 1;
             // 
             // questionListBindingSource
@@ -160,11 +180,11 @@
             // 
             // richTextBoxFateAnswer
             // 
-            richTextBoxFateAnswer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBoxFateAnswer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             richTextBoxFateAnswer.DataBindings.Add(new Binding("Text", fateModelBindingSource, "Answer", true));
             richTextBoxFateAnswer.Location = new Point(8, 145);
             richTextBoxFateAnswer.Name = "richTextBoxFateAnswer";
-            richTextBoxFateAnswer.Size = new Size(802, 157);
+            richTextBoxFateAnswer.Size = new Size(694, 221);
             richTextBoxFateAnswer.TabIndex = 7;
             richTextBoxFateAnswer.Text = "";
             // 
@@ -235,8 +255,7 @@
             // 
             // buttonClearAnswers
             // 
-            buttonClearAnswers.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonClearAnswers.Location = new Point(732, 116);
+            buttonClearAnswers.Location = new Point(626, 119);
             buttonClearAnswers.Name = "buttonClearAnswers";
             buttonClearAnswers.Size = new Size(75, 23);
             buttonClearAnswers.TabIndex = 14;
@@ -249,13 +268,13 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
             menuStrip1.Location = new Point(5, 5);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(808, 24);
+            menuStrip1.Size = new Size(1020, 24);
             menuStrip1.TabIndex = 15;
             menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveAnswersToolStripMenuItem, loadAnswersToolStripMenuItem, toolStripMenuItem1, quitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveAnswersToolStripMenuItem, saveCharacterListToolStripMenuItem, saveThreadListToolStripMenuItem, loadAnswersToolStripMenuItem, loadCharacterListToolStripMenuItem, loadThreadListToolStripMenuItem, toolStripMenuItem1, quitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "&File";
@@ -263,26 +282,54 @@
             // saveAnswersToolStripMenuItem
             // 
             saveAnswersToolStripMenuItem.Name = "saveAnswersToolStripMenuItem";
-            saveAnswersToolStripMenuItem.Size = new Size(147, 22);
+            saveAnswersToolStripMenuItem.Size = new Size(175, 22);
             saveAnswersToolStripMenuItem.Text = "&Save Answers";
             saveAnswersToolStripMenuItem.Click += saveAnswersToolStripMenuItem_Click;
+            // 
+            // saveCharacterListToolStripMenuItem
+            // 
+            saveCharacterListToolStripMenuItem.Name = "saveCharacterListToolStripMenuItem";
+            saveCharacterListToolStripMenuItem.Size = new Size(175, 22);
+            saveCharacterListToolStripMenuItem.Text = "Save Character List";
+            saveCharacterListToolStripMenuItem.Click += saveCharacterListToolStripMenuItem_Click;
+            // 
+            // saveThreadListToolStripMenuItem
+            // 
+            saveThreadListToolStripMenuItem.Name = "saveThreadListToolStripMenuItem";
+            saveThreadListToolStripMenuItem.Size = new Size(175, 22);
+            saveThreadListToolStripMenuItem.Text = "Save Thread List";
+            saveThreadListToolStripMenuItem.Click += saveThreadListToolStripMenuItem_Click;
             // 
             // loadAnswersToolStripMenuItem
             // 
             loadAnswersToolStripMenuItem.Name = "loadAnswersToolStripMenuItem";
-            loadAnswersToolStripMenuItem.Size = new Size(147, 22);
+            loadAnswersToolStripMenuItem.Size = new Size(175, 22);
             loadAnswersToolStripMenuItem.Text = "&Load Answers";
             loadAnswersToolStripMenuItem.Click += loadAnswersToolStripMenuItem_Click;
+            // 
+            // loadCharacterListToolStripMenuItem
+            // 
+            loadCharacterListToolStripMenuItem.Name = "loadCharacterListToolStripMenuItem";
+            loadCharacterListToolStripMenuItem.Size = new Size(175, 22);
+            loadCharacterListToolStripMenuItem.Text = "Load Character List";
+            loadCharacterListToolStripMenuItem.Click += loadCharacterListToolStripMenuItem_Click;
+            // 
+            // loadThreadListToolStripMenuItem
+            // 
+            loadThreadListToolStripMenuItem.Name = "loadThreadListToolStripMenuItem";
+            loadThreadListToolStripMenuItem.Size = new Size(175, 22);
+            loadThreadListToolStripMenuItem.Text = "Load Thread List";
+            loadThreadListToolStripMenuItem.Click += loadThreadListToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(144, 6);
+            toolStripMenuItem1.Size = new Size(172, 6);
             // 
             // quitToolStripMenuItem
             // 
             quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            quitToolStripMenuItem.Size = new Size(147, 22);
+            quitToolStripMenuItem.Size = new Size(175, 22);
             quitToolStripMenuItem.Text = "&Quit";
             // 
             // saveFileDialogAnswers
@@ -318,11 +365,135 @@
             buttonRollPercentile.UseVisualStyleBackColor = true;
             buttonRollPercentile.Click += buttonRollPercentile_Click;
             // 
+            // labelCharacterList
+            // 
+            labelCharacterList.AutoSize = true;
+            labelCharacterList.Location = new Point(721, 29);
+            labelCharacterList.Name = "labelCharacterList";
+            labelCharacterList.Size = new Size(82, 15);
+            labelCharacterList.TabIndex = 18;
+            labelCharacterList.Text = "Character List:";
+            // 
+            // labelThreadList
+            // 
+            labelThreadList.AutoSize = true;
+            labelThreadList.Location = new Point(875, 29);
+            labelThreadList.Name = "labelThreadList";
+            labelThreadList.Size = new Size(67, 15);
+            labelThreadList.TabIndex = 19;
+            labelThreadList.Text = "Thread List:";
+            // 
+            // textBoxCharacter
+            // 
+            textBoxCharacter.Location = new Point(721, 47);
+            textBoxCharacter.Name = "textBoxCharacter";
+            textBoxCharacter.Size = new Size(150, 23);
+            textBoxCharacter.TabIndex = 20;
+            textBoxCharacter.KeyUp += textBoxCharacter_KeyUp;
+            // 
+            // listBoxCharacters
+            // 
+            listBoxCharacters.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            listBoxCharacters.DataSource = charactersBindingSource;
+            listBoxCharacters.FormattingEnabled = true;
+            listBoxCharacters.ItemHeight = 15;
+            listBoxCharacters.Location = new Point(720, 76);
+            listBoxCharacters.Name = "listBoxCharacters";
+            listBoxCharacters.Size = new Size(150, 259);
+            listBoxCharacters.TabIndex = 21;
+            listBoxCharacters.DoubleClick += listBoxCharacters_DoubleClick;
+            // 
+            // charactersBindingSource
+            // 
+            charactersBindingSource.DataMember = "Characters";
+            charactersBindingSource.DataSource = fateModelBindingSource;
+            // 
+            // textBoxThread
+            // 
+            textBoxThread.Location = new Point(875, 47);
+            textBoxThread.Name = "textBoxThread";
+            textBoxThread.Size = new Size(150, 23);
+            textBoxThread.TabIndex = 22;
+            textBoxThread.KeyUp += textBoxThread_KeyUp;
+            // 
+            // listBoxThreadsList
+            // 
+            listBoxThreadsList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            listBoxThreadsList.DataSource = threadsBindingSource;
+            listBoxThreadsList.FormattingEnabled = true;
+            listBoxThreadsList.ItemHeight = 15;
+            listBoxThreadsList.Location = new Point(874, 76);
+            listBoxThreadsList.Name = "listBoxThreadsList";
+            listBoxThreadsList.Size = new Size(150, 259);
+            listBoxThreadsList.TabIndex = 23;
+            listBoxThreadsList.DoubleClick += listBoxThreadsList_DoubleClick;
+            // 
+            // threadsBindingSource
+            // 
+            threadsBindingSource.DataMember = "Threads";
+            threadsBindingSource.DataSource = fateModelBindingSource;
+            // 
+            // saveFileDialogCharacters
+            // 
+            saveFileDialogCharacters.DefaultExt = "txt";
+            saveFileDialogCharacters.FileName = "Characters.txt";
+            saveFileDialogCharacters.Filter = "Characters files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialogCharacters.Title = "Save answers to";
+            // 
+            // saveFileDialogThreads
+            // 
+            saveFileDialogThreads.DefaultExt = "txt";
+            saveFileDialogThreads.FileName = "Threads.txt";
+            saveFileDialogThreads.Filter = "Threads files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialogThreads.Title = "Save answers to";
+            // 
+            // openFileDialogCharacters
+            // 
+            openFileDialogCharacters.DefaultExt = "txt";
+            openFileDialogCharacters.FileName = "Characters.txt";
+            openFileDialogCharacters.Filter = "Characters files (*.txt)|*.txt|All files (*.*)|*.*";
+            // 
+            // openFileDialogThreads
+            // 
+            openFileDialogThreads.DefaultExt = "txt";
+            openFileDialogThreads.FileName = "Threads.txt";
+            openFileDialogThreads.Filter = "Threads files (*.txt)|*.txt|All files (*.*)|*.*";
+            // 
+            // buttonClearCharacters
+            // 
+            buttonClearCharacters.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            buttonClearCharacters.Location = new Point(720, 343);
+            buttonClearCharacters.Name = "buttonClearCharacters";
+            buttonClearCharacters.Size = new Size(75, 23);
+            buttonClearCharacters.TabIndex = 24;
+            buttonClearCharacters.Text = "Clear";
+            buttonClearCharacters.UseVisualStyleBackColor = true;
+            buttonClearCharacters.Click += buttonClearCharacters_Click;
+            // 
+            // buttonClearThreads
+            // 
+            buttonClearThreads.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            buttonClearThreads.Location = new Point(875, 343);
+            buttonClearThreads.Name = "buttonClearThreads";
+            buttonClearThreads.Size = new Size(75, 23);
+            buttonClearThreads.TabIndex = 25;
+            buttonClearThreads.Text = "Clear";
+            buttonClearThreads.UseVisualStyleBackColor = true;
+            buttonClearThreads.Click += buttonClearThreads_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(818, 310);
+            ClientSize = new Size(1030, 374);
+            Controls.Add(buttonClearThreads);
+            Controls.Add(buttonClearCharacters);
+            Controls.Add(listBoxThreadsList);
+            Controls.Add(textBoxThread);
+            Controls.Add(listBoxCharacters);
+            Controls.Add(textBoxCharacter);
+            Controls.Add(labelThreadList);
+            Controls.Add(labelCharacterList);
             Controls.Add(buttonRollPercentile);
             Controls.Add(buttonRollAgainstChaosFactor);
             Controls.Add(buttonClearAnswers);
@@ -341,6 +512,7 @@
             Controls.Add(comboBoxFateQuestion);
             Controls.Add(labelFateQuestion);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "FormMain";
             Padding = new Padding(5);
@@ -351,6 +523,8 @@
             ((System.ComponentModel.ISupportInitialize)oddsListBindingSource).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)charactersBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)threadsBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -386,5 +560,23 @@
         private OpenFileDialog openFileDialogAnswers;
         private Button buttonRollAgainstChaosFactor;
         private Button buttonRollPercentile;
+        private Label labelCharacterList;
+        private Label labelThreadList;
+        private TextBox textBoxCharacter;
+        private ListBox listBoxCharacters;
+        private TextBox textBoxThread;
+        private ListBox listBoxThreadsList;
+        private BindingSource charactersBindingSource;
+        private BindingSource threadsBindingSource;
+        private ToolStripMenuItem saveCharacterListToolStripMenuItem;
+        private ToolStripMenuItem saveThreadListToolStripMenuItem;
+        private ToolStripMenuItem loadCharacterListToolStripMenuItem;
+        private ToolStripMenuItem loadThreadListToolStripMenuItem;
+        private SaveFileDialog saveFileDialogCharacters;
+        private SaveFileDialog saveFileDialogThreads;
+        private OpenFileDialog openFileDialogCharacters;
+        private OpenFileDialog openFileDialogThreads;
+        private Button buttonClearCharacters;
+        private Button buttonClearThreads;
     }
 }

@@ -100,5 +100,81 @@ namespace Mythic_Game_Master_Emulator
             gme.RollPercentileDice();
             resetModelAndScroll();
         }
+
+        private void textBoxCharacter_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gme.AddCharacter(textBoxCharacter.Text);
+                resetModelAndScroll();
+            }
+        }
+
+        private void textBoxThread_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gme.AddThread(textBoxThread.Text);
+                resetModelAndScroll();
+            }
+        }
+
+        private void listBoxCharacters_DoubleClick(object sender, EventArgs e)
+        {
+            gme.RemoveCharacter(listBoxCharacters.Text);
+            resetModelAndScroll();
+        }
+
+        private void listBoxThreadsList_DoubleClick(object sender, EventArgs e)
+        {
+            gme.RemoveThread(listBoxThreadsList.Text);
+            resetModelAndScroll();
+        }
+
+        private void saveCharacterListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialogCharacters.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllLines(saveFileDialogCharacters.FileName, gme.FateModel.Characters.GetRange(0, gme.FateModel.Characters.Count));
+            }
+        }
+
+        private void saveThreadListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialogThreads.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllLines(saveFileDialogThreads.FileName, gme.FateModel.Threads.GetRange(0, gme.FateModel.Threads.Count));
+            }
+        }
+
+        private void loadCharacterListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogCharacters.ShowDialog() == DialogResult.OK)
+            {
+                gme.SetCharactersFrom(openFileDialogCharacters.FileName);
+                resetModelAndScroll();
+            }
+        }
+
+        private void loadThreadListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogThreads.ShowDialog() == DialogResult.OK)
+            {
+                gme.SetThreadsFrom(openFileDialogThreads.FileName);
+                resetModelAndScroll();
+            }
+        }
+
+        private void buttonClearCharacters_Click(object sender, EventArgs e)
+        {
+            gme.FateModel.Characters.Clear();
+            resetModelAndScroll();
+        }
+
+        private void buttonClearThreads_Click(object sender, EventArgs e)
+        {
+            gme.FateModel.Threads.Clear();
+            resetModelAndScroll();
+        }
     }
 }

@@ -8,7 +8,12 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ApplicationIcon>PayIB9oW_200x200.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="PayIB9oW_200x200.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="MeaningTableAction1.txt">
