@@ -13,4 +13,4 @@ Features:
 - Change Odds-Labels
 - Save/Load Answers
 
-![Screenshot of the programm](https://github.com/Quintar/MGME4Windows/blob/master/Screenshot_V1_0.png?raw=true)
+![Screenshot of the programm](https://github.com/Quintar/MGME4Windows/blob/master/Screenshot_V1_2.png?raw=true)
