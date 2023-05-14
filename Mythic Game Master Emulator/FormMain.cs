@@ -88,5 +88,17 @@ namespace Mythic_Game_Master_Emulator
                 resetModelAndScroll();
             }
         }
+
+        private void buttonRollAgainstChaosFactor_Click(object sender, EventArgs e)
+        {
+            gme.RollAgainstChaosFactor();
+            resetModelAndScroll();
+        }
+
+        private void buttonRollPercentile_Click(object sender, EventArgs e)
+        {
+            gme.RollPercentileDice();
+            resetModelAndScroll();
+        }
     }
 }

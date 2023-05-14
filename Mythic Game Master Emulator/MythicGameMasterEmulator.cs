@@ -66,5 +66,21 @@ namespace Mythic_Game_Master_Emulator
         {
             myFm.AddToAnswer(File.ReadAllText(filename));
         }
+
+        public void RollAgainstChaosFactor()
+        {
+            int roll = myFm.Roll1Dice;
+            if (roll > myFm.ChaosFactor) myFm.AddToAnswer("Scene happens as expected");
+            else
+            {
+                if (roll == 1 || roll == 3 || roll == 1 || roll == 1 || roll == 9) myFm.AddToAnswer("Altered Scene");
+                else myFm.AddToAnswer("Interrupt Scene");
+            }
+        }
+
+        public void RollPercentileDice()
+        {
+            myFm.AddToAnswer("Roll percentile result: " + myFm.RollDice.ToString());
+        }
     }
 }

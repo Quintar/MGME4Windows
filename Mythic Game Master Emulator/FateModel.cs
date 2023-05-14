@@ -116,6 +116,8 @@ namespace Mythic_Game_Master_Emulator
 
         public int RollDice { get { return Random.Shared.Next(1, 101); } }
 
+        public int Roll1Dice { get { return Random.Shared.Next(1, 11); } }
+
         public FateResult GetFateResult(int odds, int chaos, int mod = 0)
         {
             lastFateDiceResult = RollDice;

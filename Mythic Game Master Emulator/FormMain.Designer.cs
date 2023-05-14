@@ -28,316 +28,331 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.labelFateQuestion = new System.Windows.Forms.Label();
-            this.comboBoxFateQuestion = new System.Windows.Forms.ComboBox();
-            this.questionListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fateModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelChaosFactor = new System.Windows.Forms.Label();
-            this.listBoxChaosFactorList = new System.Windows.Forms.ComboBox();
-            this.chaosFactorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelOdds = new System.Windows.Forms.Label();
-            this.listBoxOddsList = new System.Windows.Forms.ComboBox();
-            this.oddsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonAskFateQuestion = new System.Windows.Forms.Button();
-            this.richTextBoxFateAnswer = new System.Windows.Forms.RichTextBox();
-            this.checkBoxAddAnswer = new System.Windows.Forms.CheckBox();
-            this.buttonGenerateRandomEvent = new System.Windows.Forms.Button();
-            this.comboBoxMeaningTablesFiles1 = new System.Windows.Forms.ComboBox();
-            this.labelMeaningTables = new System.Windows.Forms.Label();
-            this.comboBoxMeaningTablesFiles2 = new System.Windows.Forms.ComboBox();
-            this.buttonGenerateMeaning = new System.Windows.Forms.Button();
-            this.buttonClearAnswers = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAnswersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadAnswersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileDialogAnswers = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialogAnswers = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.questionListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fateModelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chaosFactorsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oddsListBindingSource)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            labelFateQuestion = new Label();
+            comboBoxFateQuestion = new ComboBox();
+            questionListBindingSource = new BindingSource(components);
+            fateModelBindingSource = new BindingSource(components);
+            labelChaosFactor = new Label();
+            listBoxChaosFactorList = new ComboBox();
+            chaosFactorsBindingSource = new BindingSource(components);
+            labelOdds = new Label();
+            listBoxOddsList = new ComboBox();
+            oddsListBindingSource = new BindingSource(components);
+            buttonAskFateQuestion = new Button();
+            richTextBoxFateAnswer = new RichTextBox();
+            checkBoxAddAnswer = new CheckBox();
+            buttonGenerateRandomEvent = new Button();
+            comboBoxMeaningTablesFiles1 = new ComboBox();
+            labelMeaningTables = new Label();
+            comboBoxMeaningTablesFiles2 = new ComboBox();
+            buttonGenerateMeaning = new Button();
+            buttonClearAnswers = new Button();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            saveAnswersToolStripMenuItem = new ToolStripMenuItem();
+            loadAnswersToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripSeparator();
+            quitToolStripMenuItem = new ToolStripMenuItem();
+            saveFileDialogAnswers = new SaveFileDialog();
+            openFileDialogAnswers = new OpenFileDialog();
+            buttonRollAgainstChaosFactor = new Button();
+            buttonRollPercentile = new Button();
+            ((System.ComponentModel.ISupportInitialize)questionListBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fateModelBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chaosFactorsBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)oddsListBindingSource).BeginInit();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // labelFateQuestion
             // 
-            this.labelFateQuestion.AutoSize = true;
-            this.labelFateQuestion.Location = new System.Drawing.Point(5, 29);
-            this.labelFateQuestion.Name = "labelFateQuestion";
-            this.labelFateQuestion.Size = new System.Drawing.Size(83, 15);
-            this.labelFateQuestion.TabIndex = 0;
-            this.labelFateQuestion.Text = "Fate Question:";
+            labelFateQuestion.AutoSize = true;
+            labelFateQuestion.Location = new Point(5, 29);
+            labelFateQuestion.Name = "labelFateQuestion";
+            labelFateQuestion.Size = new Size(83, 15);
+            labelFateQuestion.TabIndex = 0;
+            labelFateQuestion.Text = "Fate Question:";
             // 
             // comboBoxFateQuestion
             // 
-            this.comboBoxFateQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxFateQuestion.DataSource = this.questionListBindingSource;
-            this.comboBoxFateQuestion.FormattingEnabled = true;
-            this.comboBoxFateQuestion.Location = new System.Drawing.Point(5, 47);
-            this.comboBoxFateQuestion.Name = "comboBoxFateQuestion";
-            this.comboBoxFateQuestion.Size = new System.Drawing.Size(640, 23);
-            this.comboBoxFateQuestion.TabIndex = 1;
+            comboBoxFateQuestion.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBoxFateQuestion.DataSource = questionListBindingSource;
+            comboBoxFateQuestion.FormattingEnabled = true;
+            comboBoxFateQuestion.Location = new Point(5, 47);
+            comboBoxFateQuestion.Name = "comboBoxFateQuestion";
+            comboBoxFateQuestion.Size = new Size(802, 23);
+            comboBoxFateQuestion.TabIndex = 1;
             // 
             // questionListBindingSource
             // 
-            this.questionListBindingSource.AllowNew = true;
-            this.questionListBindingSource.DataMember = "QuestionList";
-            this.questionListBindingSource.DataSource = this.fateModelBindingSource;
+            questionListBindingSource.AllowNew = true;
+            questionListBindingSource.DataMember = "QuestionList";
+            questionListBindingSource.DataSource = fateModelBindingSource;
             // 
             // fateModelBindingSource
             // 
-            this.fateModelBindingSource.DataSource = typeof(Mythic_Game_Master_Emulator.FateModel);
+            fateModelBindingSource.DataSource = typeof(FateModel);
             // 
             // labelChaosFactor
             // 
-            this.labelChaosFactor.AutoSize = true;
-            this.labelChaosFactor.Location = new System.Drawing.Point(2, 73);
-            this.labelChaosFactor.Name = "labelChaosFactor";
-            this.labelChaosFactor.Size = new System.Drawing.Size(79, 15);
-            this.labelChaosFactor.TabIndex = 2;
-            this.labelChaosFactor.Text = "Chaos Factor:";
+            labelChaosFactor.AutoSize = true;
+            labelChaosFactor.Location = new Point(2, 73);
+            labelChaosFactor.Name = "labelChaosFactor";
+            labelChaosFactor.Size = new Size(79, 15);
+            labelChaosFactor.TabIndex = 2;
+            labelChaosFactor.Text = "Chaos Factor:";
             // 
             // listBoxChaosFactorList
             // 
-            this.listBoxChaosFactorList.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.fateModelBindingSource, "ChaosFactor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.listBoxChaosFactorList.DataSource = this.chaosFactorsBindingSource;
-            this.listBoxChaosFactorList.DisplayMember = "chaosFactor";
-            this.listBoxChaosFactorList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listBoxChaosFactorList.FormattingEnabled = true;
-            this.listBoxChaosFactorList.ItemHeight = 15;
-            this.listBoxChaosFactorList.Location = new System.Drawing.Point(5, 91);
-            this.listBoxChaosFactorList.Name = "listBoxChaosFactorList";
-            this.listBoxChaosFactorList.Size = new System.Drawing.Size(79, 23);
-            this.listBoxChaosFactorList.TabIndex = 3;
+            listBoxChaosFactorList.DataBindings.Add(new Binding("SelectedIndex", fateModelBindingSource, "ChaosFactor", true, DataSourceUpdateMode.OnPropertyChanged));
+            listBoxChaosFactorList.DataSource = chaosFactorsBindingSource;
+            listBoxChaosFactorList.DisplayMember = "chaosFactor";
+            listBoxChaosFactorList.DropDownStyle = ComboBoxStyle.DropDownList;
+            listBoxChaosFactorList.FormattingEnabled = true;
+            listBoxChaosFactorList.ItemHeight = 15;
+            listBoxChaosFactorList.Location = new Point(5, 91);
+            listBoxChaosFactorList.Name = "listBoxChaosFactorList";
+            listBoxChaosFactorList.Size = new Size(79, 23);
+            listBoxChaosFactorList.TabIndex = 3;
             // 
             // chaosFactorsBindingSource
             // 
-            this.chaosFactorsBindingSource.DataMember = "ChaosFactors";
-            this.chaosFactorsBindingSource.DataSource = this.fateModelBindingSource;
+            chaosFactorsBindingSource.DataMember = "ChaosFactors";
+            chaosFactorsBindingSource.DataSource = fateModelBindingSource;
             // 
             // labelOdds
             // 
-            this.labelOdds.AutoSize = true;
-            this.labelOdds.Location = new System.Drawing.Point(109, 73);
-            this.labelOdds.Name = "labelOdds";
-            this.labelOdds.Size = new System.Drawing.Size(38, 15);
-            this.labelOdds.TabIndex = 4;
-            this.labelOdds.Text = "Odds:";
+            labelOdds.AutoSize = true;
+            labelOdds.Location = new Point(215, 73);
+            labelOdds.Name = "labelOdds";
+            labelOdds.Size = new Size(38, 15);
+            labelOdds.TabIndex = 4;
+            labelOdds.Text = "Odds:";
             // 
             // listBoxOddsList
             // 
-            this.listBoxOddsList.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.fateModelBindingSource, "Odds", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.listBoxOddsList.DataSource = this.oddsListBindingSource;
-            this.listBoxOddsList.DisplayMember = "odds";
-            this.listBoxOddsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.listBoxOddsList.FormattingEnabled = true;
-            this.listBoxOddsList.ItemHeight = 15;
-            this.listBoxOddsList.Location = new System.Drawing.Point(109, 91);
-            this.listBoxOddsList.Name = "listBoxOddsList";
-            this.listBoxOddsList.Size = new System.Drawing.Size(120, 23);
-            this.listBoxOddsList.TabIndex = 5;
+            listBoxOddsList.DataBindings.Add(new Binding("SelectedIndex", fateModelBindingSource, "Odds", true, DataSourceUpdateMode.OnPropertyChanged));
+            listBoxOddsList.DataSource = oddsListBindingSource;
+            listBoxOddsList.DisplayMember = "odds";
+            listBoxOddsList.DropDownStyle = ComboBoxStyle.DropDownList;
+            listBoxOddsList.FormattingEnabled = true;
+            listBoxOddsList.ItemHeight = 15;
+            listBoxOddsList.Location = new Point(215, 91);
+            listBoxOddsList.Name = "listBoxOddsList";
+            listBoxOddsList.Size = new Size(120, 23);
+            listBoxOddsList.TabIndex = 5;
             // 
             // oddsListBindingSource
             // 
-            this.oddsListBindingSource.DataMember = "OddsList";
-            this.oddsListBindingSource.DataSource = this.fateModelBindingSource;
+            oddsListBindingSource.DataMember = "OddsList";
+            oddsListBindingSource.DataSource = fateModelBindingSource;
             // 
             // buttonAskFateQuestion
             // 
-            this.buttonAskFateQuestion.Location = new System.Drawing.Point(5, 116);
-            this.buttonAskFateQuestion.Name = "buttonAskFateQuestion";
-            this.buttonAskFateQuestion.Size = new System.Drawing.Size(75, 23);
-            this.buttonAskFateQuestion.TabIndex = 6;
-            this.buttonAskFateQuestion.Text = "Ask";
-            this.buttonAskFateQuestion.UseVisualStyleBackColor = true;
-            this.buttonAskFateQuestion.Click += new System.EventHandler(this.buttonDoAskFateQuestion_Click);
+            buttonAskFateQuestion.Location = new Point(5, 116);
+            buttonAskFateQuestion.Name = "buttonAskFateQuestion";
+            buttonAskFateQuestion.Size = new Size(75, 23);
+            buttonAskFateQuestion.TabIndex = 6;
+            buttonAskFateQuestion.Text = "Ask";
+            buttonAskFateQuestion.UseVisualStyleBackColor = true;
+            buttonAskFateQuestion.Click += buttonDoAskFateQuestion_Click;
             // 
             // richTextBoxFateAnswer
             // 
-            this.richTextBoxFateAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxFateAnswer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fateModelBindingSource, "Answer", true));
-            this.richTextBoxFateAnswer.Location = new System.Drawing.Point(8, 145);
-            this.richTextBoxFateAnswer.Name = "richTextBoxFateAnswer";
-            this.richTextBoxFateAnswer.Size = new System.Drawing.Size(640, 157);
-            this.richTextBoxFateAnswer.TabIndex = 7;
-            this.richTextBoxFateAnswer.Text = "";
+            richTextBoxFateAnswer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBoxFateAnswer.DataBindings.Add(new Binding("Text", fateModelBindingSource, "Answer", true));
+            richTextBoxFateAnswer.Location = new Point(8, 145);
+            richTextBoxFateAnswer.Name = "richTextBoxFateAnswer";
+            richTextBoxFateAnswer.Size = new Size(802, 157);
+            richTextBoxFateAnswer.TabIndex = 7;
+            richTextBoxFateAnswer.Text = "";
             // 
             // checkBoxAddAnswer
             // 
-            this.checkBoxAddAnswer.AutoSize = true;
-            this.checkBoxAddAnswer.Checked = true;
-            this.checkBoxAddAnswer.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAddAnswer.Location = new System.Drawing.Point(86, 119);
-            this.checkBoxAddAnswer.Name = "checkBoxAddAnswer";
-            this.checkBoxAddAnswer.Size = new System.Drawing.Size(90, 19);
-            this.checkBoxAddAnswer.TabIndex = 8;
-            this.checkBoxAddAnswer.Text = "Add Answer";
-            this.checkBoxAddAnswer.UseVisualStyleBackColor = true;
+            checkBoxAddAnswer.AutoSize = true;
+            checkBoxAddAnswer.Checked = true;
+            checkBoxAddAnswer.CheckState = CheckState.Checked;
+            checkBoxAddAnswer.Location = new Point(86, 119);
+            checkBoxAddAnswer.Name = "checkBoxAddAnswer";
+            checkBoxAddAnswer.Size = new Size(90, 19);
+            checkBoxAddAnswer.TabIndex = 8;
+            checkBoxAddAnswer.Text = "Add Answer";
+            checkBoxAddAnswer.UseVisualStyleBackColor = true;
             // 
             // buttonGenerateRandomEvent
             // 
-            this.buttonGenerateRandomEvent.Location = new System.Drawing.Point(182, 116);
-            this.buttonGenerateRandomEvent.Name = "buttonGenerateRandomEvent";
-            this.buttonGenerateRandomEvent.Size = new System.Drawing.Size(98, 23);
-            this.buttonGenerateRandomEvent.TabIndex = 9;
-            this.buttonGenerateRandomEvent.Text = "Random Event";
-            this.buttonGenerateRandomEvent.UseVisualStyleBackColor = true;
-            this.buttonGenerateRandomEvent.Click += new System.EventHandler(this.buttonGenerateRandomEvent_Click);
+            buttonGenerateRandomEvent.Location = new Point(182, 116);
+            buttonGenerateRandomEvent.Name = "buttonGenerateRandomEvent";
+            buttonGenerateRandomEvent.Size = new Size(98, 23);
+            buttonGenerateRandomEvent.TabIndex = 9;
+            buttonGenerateRandomEvent.Text = "Random Event";
+            buttonGenerateRandomEvent.UseVisualStyleBackColor = true;
+            buttonGenerateRandomEvent.Click += buttonGenerateRandomEvent_Click;
             // 
             // comboBoxMeaningTablesFiles1
             // 
-            this.comboBoxMeaningTablesFiles1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBoxMeaningTablesFiles1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxMeaningTablesFiles1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMeaningTablesFiles1.FormattingEnabled = true;
-            this.comboBoxMeaningTablesFiles1.Location = new System.Drawing.Point(235, 91);
-            this.comboBoxMeaningTablesFiles1.Name = "comboBoxMeaningTablesFiles1";
-            this.comboBoxMeaningTablesFiles1.Size = new System.Drawing.Size(116, 23);
-            this.comboBoxMeaningTablesFiles1.Sorted = true;
-            this.comboBoxMeaningTablesFiles1.TabIndex = 10;
+            comboBoxMeaningTablesFiles1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBoxMeaningTablesFiles1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxMeaningTablesFiles1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMeaningTablesFiles1.FormattingEnabled = true;
+            comboBoxMeaningTablesFiles1.Location = new Point(341, 91);
+            comboBoxMeaningTablesFiles1.Name = "comboBoxMeaningTablesFiles1";
+            comboBoxMeaningTablesFiles1.Size = new Size(116, 23);
+            comboBoxMeaningTablesFiles1.Sorted = true;
+            comboBoxMeaningTablesFiles1.TabIndex = 10;
             // 
             // labelMeaningTables
             // 
-            this.labelMeaningTables.AutoSize = true;
-            this.labelMeaningTables.Location = new System.Drawing.Point(235, 73);
-            this.labelMeaningTables.Name = "labelMeaningTables";
-            this.labelMeaningTables.Size = new System.Drawing.Size(92, 15);
-            this.labelMeaningTables.TabIndex = 11;
-            this.labelMeaningTables.Text = "Meaning Tables:";
+            labelMeaningTables.AutoSize = true;
+            labelMeaningTables.Location = new Point(341, 73);
+            labelMeaningTables.Name = "labelMeaningTables";
+            labelMeaningTables.Size = new Size(92, 15);
+            labelMeaningTables.TabIndex = 11;
+            labelMeaningTables.Text = "Meaning Tables:";
             // 
             // comboBoxMeaningTablesFiles2
             // 
-            this.comboBoxMeaningTablesFiles2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBoxMeaningTablesFiles2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxMeaningTablesFiles2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMeaningTablesFiles2.FormattingEnabled = true;
-            this.comboBoxMeaningTablesFiles2.Location = new System.Drawing.Point(357, 91);
-            this.comboBoxMeaningTablesFiles2.Name = "comboBoxMeaningTablesFiles2";
-            this.comboBoxMeaningTablesFiles2.Size = new System.Drawing.Size(116, 23);
-            this.comboBoxMeaningTablesFiles2.Sorted = true;
-            this.comboBoxMeaningTablesFiles2.TabIndex = 12;
+            comboBoxMeaningTablesFiles2.AutoCompleteMode = AutoCompleteMode.Suggest;
+            comboBoxMeaningTablesFiles2.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBoxMeaningTablesFiles2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMeaningTablesFiles2.FormattingEnabled = true;
+            comboBoxMeaningTablesFiles2.Location = new Point(463, 91);
+            comboBoxMeaningTablesFiles2.Name = "comboBoxMeaningTablesFiles2";
+            comboBoxMeaningTablesFiles2.Size = new Size(116, 23);
+            comboBoxMeaningTablesFiles2.Sorted = true;
+            comboBoxMeaningTablesFiles2.TabIndex = 12;
             // 
             // buttonGenerateMeaning
             // 
-            this.buttonGenerateMeaning.Location = new System.Drawing.Point(479, 90);
-            this.buttonGenerateMeaning.Name = "buttonGenerateMeaning";
-            this.buttonGenerateMeaning.Size = new System.Drawing.Size(117, 23);
-            this.buttonGenerateMeaning.TabIndex = 13;
-            this.buttonGenerateMeaning.Text = "Generate Meaning";
-            this.buttonGenerateMeaning.UseVisualStyleBackColor = true;
-            this.buttonGenerateMeaning.Click += new System.EventHandler(this.buttonGenerateMeaning_Click);
+            buttonGenerateMeaning.Location = new Point(585, 90);
+            buttonGenerateMeaning.Name = "buttonGenerateMeaning";
+            buttonGenerateMeaning.Size = new Size(117, 23);
+            buttonGenerateMeaning.TabIndex = 13;
+            buttonGenerateMeaning.Text = "Generate Meaning";
+            buttonGenerateMeaning.UseVisualStyleBackColor = true;
+            buttonGenerateMeaning.Click += buttonGenerateMeaning_Click;
             // 
             // buttonClearAnswers
             // 
-            this.buttonClearAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClearAnswers.Location = new System.Drawing.Point(570, 116);
-            this.buttonClearAnswers.Name = "buttonClearAnswers";
-            this.buttonClearAnswers.Size = new System.Drawing.Size(75, 23);
-            this.buttonClearAnswers.TabIndex = 14;
-            this.buttonClearAnswers.Text = "Clear";
-            this.buttonClearAnswers.UseVisualStyleBackColor = true;
-            this.buttonClearAnswers.Click += new System.EventHandler(this.buttonClearAnswers_Click);
+            buttonClearAnswers.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonClearAnswers.Location = new Point(732, 116);
+            buttonClearAnswers.Name = "buttonClearAnswers";
+            buttonClearAnswers.Size = new Size(75, 23);
+            buttonClearAnswers.TabIndex = 14;
+            buttonClearAnswers.Text = "Clear";
+            buttonClearAnswers.UseVisualStyleBackColor = true;
+            buttonClearAnswers.Click += buttonClearAnswers_Click;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(5, 5);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(646, 24);
-            this.menuStrip1.TabIndex = 15;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
+            menuStrip1.Location = new Point(5, 5);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(808, 24);
+            menuStrip1.TabIndex = 15;
+            menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveAnswersToolStripMenuItem,
-            this.loadAnswersToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.quitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveAnswersToolStripMenuItem, loadAnswersToolStripMenuItem, toolStripMenuItem1, quitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Text = "&File";
             // 
             // saveAnswersToolStripMenuItem
             // 
-            this.saveAnswersToolStripMenuItem.Name = "saveAnswersToolStripMenuItem";
-            this.saveAnswersToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.saveAnswersToolStripMenuItem.Text = "&Save Answers";
-            this.saveAnswersToolStripMenuItem.Click += new System.EventHandler(this.saveAnswersToolStripMenuItem_Click);
+            saveAnswersToolStripMenuItem.Name = "saveAnswersToolStripMenuItem";
+            saveAnswersToolStripMenuItem.Size = new Size(147, 22);
+            saveAnswersToolStripMenuItem.Text = "&Save Answers";
+            saveAnswersToolStripMenuItem.Click += saveAnswersToolStripMenuItem_Click;
             // 
             // loadAnswersToolStripMenuItem
             // 
-            this.loadAnswersToolStripMenuItem.Name = "loadAnswersToolStripMenuItem";
-            this.loadAnswersToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.loadAnswersToolStripMenuItem.Text = "&Load Answers";
-            this.loadAnswersToolStripMenuItem.Click += new System.EventHandler(this.loadAnswersToolStripMenuItem_Click);
+            loadAnswersToolStripMenuItem.Name = "loadAnswersToolStripMenuItem";
+            loadAnswersToolStripMenuItem.Size = new Size(147, 22);
+            loadAnswersToolStripMenuItem.Text = "&Load Answers";
+            loadAnswersToolStripMenuItem.Click += loadAnswersToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(144, 6);
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(144, 6);
             // 
             // quitToolStripMenuItem
             // 
-            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.quitToolStripMenuItem.Text = "&Quit";
+            quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            quitToolStripMenuItem.Size = new Size(147, 22);
+            quitToolStripMenuItem.Text = "&Quit";
             // 
             // saveFileDialogAnswers
             // 
-            this.saveFileDialogAnswers.DefaultExt = "txt";
-            this.saveFileDialogAnswers.FileName = "Answers.txt";
-            this.saveFileDialogAnswers.Filter = "Answer files (*.txt)|*.txt|All files (*.*)|*.*";
-            this.saveFileDialogAnswers.Title = "Save answers to";
+            saveFileDialogAnswers.DefaultExt = "txt";
+            saveFileDialogAnswers.FileName = "Answers.txt";
+            saveFileDialogAnswers.Filter = "Answer files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialogAnswers.Title = "Save answers to";
             // 
             // openFileDialogAnswers
             // 
-            this.openFileDialogAnswers.DefaultExt = "txt";
-            this.openFileDialogAnswers.FileName = "Answers.txt";
-            this.openFileDialogAnswers.Filter = "Answer files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialogAnswers.DefaultExt = "txt";
+            openFileDialogAnswers.FileName = "Answers.txt";
+            openFileDialogAnswers.Filter = "Answer files (*.txt)|*.txt|All files (*.*)|*.*";
+            // 
+            // buttonRollAgainstChaosFactor
+            // 
+            buttonRollAgainstChaosFactor.Location = new Point(90, 90);
+            buttonRollAgainstChaosFactor.Name = "buttonRollAgainstChaosFactor";
+            buttonRollAgainstChaosFactor.Size = new Size(75, 23);
+            buttonRollAgainstChaosFactor.TabIndex = 16;
+            buttonRollAgainstChaosFactor.Text = "Roll";
+            buttonRollAgainstChaosFactor.UseVisualStyleBackColor = true;
+            buttonRollAgainstChaosFactor.Click += buttonRollAgainstChaosFactor_Click;
+            // 
+            // buttonRollPercentile
+            // 
+            buttonRollPercentile.Location = new Point(286, 116);
+            buttonRollPercentile.Name = "buttonRollPercentile";
+            buttonRollPercentile.Size = new Size(95, 23);
+            buttonRollPercentile.TabIndex = 17;
+            buttonRollPercentile.Text = "Roll Percentile";
+            buttonRollPercentile.UseVisualStyleBackColor = true;
+            buttonRollPercentile.Click += buttonRollPercentile_Click;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 310);
-            this.Controls.Add(this.buttonClearAnswers);
-            this.Controls.Add(this.buttonGenerateMeaning);
-            this.Controls.Add(this.comboBoxMeaningTablesFiles2);
-            this.Controls.Add(this.labelMeaningTables);
-            this.Controls.Add(this.comboBoxMeaningTablesFiles1);
-            this.Controls.Add(this.buttonGenerateRandomEvent);
-            this.Controls.Add(this.checkBoxAddAnswer);
-            this.Controls.Add(this.richTextBoxFateAnswer);
-            this.Controls.Add(this.buttonAskFateQuestion);
-            this.Controls.Add(this.listBoxOddsList);
-            this.Controls.Add(this.labelOdds);
-            this.Controls.Add(this.listBoxChaosFactorList);
-            this.Controls.Add(this.labelChaosFactor);
-            this.Controls.Add(this.comboBoxFateQuestion);
-            this.Controls.Add(this.labelFateQuestion);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormMain";
-            this.Padding = new System.Windows.Forms.Padding(5);
-            this.Text = "Mythic Game Master Emulator";
-            ((System.ComponentModel.ISupportInitialize)(this.questionListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fateModelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chaosFactorsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oddsListBindingSource)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(818, 310);
+            Controls.Add(buttonRollPercentile);
+            Controls.Add(buttonRollAgainstChaosFactor);
+            Controls.Add(buttonClearAnswers);
+            Controls.Add(buttonGenerateMeaning);
+            Controls.Add(comboBoxMeaningTablesFiles2);
+            Controls.Add(labelMeaningTables);
+            Controls.Add(comboBoxMeaningTablesFiles1);
+            Controls.Add(buttonGenerateRandomEvent);
+            Controls.Add(checkBoxAddAnswer);
+            Controls.Add(richTextBoxFateAnswer);
+            Controls.Add(buttonAskFateQuestion);
+            Controls.Add(listBoxOddsList);
+            Controls.Add(labelOdds);
+            Controls.Add(listBoxChaosFactorList);
+            Controls.Add(labelChaosFactor);
+            Controls.Add(comboBoxFateQuestion);
+            Controls.Add(labelFateQuestion);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "FormMain";
+            Padding = new Padding(5);
+            Text = "Mythic Game Master Emulator";
+            ((System.ComponentModel.ISupportInitialize)questionListBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fateModelBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chaosFactorsBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)oddsListBindingSource).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -369,5 +384,7 @@
         private ToolStripMenuItem quitToolStripMenuItem;
         private SaveFileDialog saveFileDialogAnswers;
         private OpenFileDialog openFileDialogAnswers;
+        private Button buttonRollAgainstChaosFactor;
+        private Button buttonRollPercentile;
     }
 }
