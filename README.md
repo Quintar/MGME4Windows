@@ -12,5 +12,9 @@ Features:
 - Add your own Meaning Tables!
 - Change Odds-Labels
 - Save/Load Answers
+- Save/Load Character List
+- Save/Load Thread List
+- Roll Percent Dice
+- Roll for Random Event-Type
 
 ![Screenshot of the programm](https://github.com/Quintar/MGME4Windows/blob/master/Screenshot_V1_2.png?raw=true)
