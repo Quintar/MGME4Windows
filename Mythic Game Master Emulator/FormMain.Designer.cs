@@ -485,6 +485,7 @@
             // 
             // buttonRollCharacter
             // 
+            buttonRollCharacter.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonRollCharacter.Location = new Point(794, 343);
             buttonRollCharacter.Name = "buttonRollCharacter";
             buttonRollCharacter.Size = new Size(75, 23);
@@ -495,6 +496,7 @@
             // 
             // buttonRollThread
             // 
+            buttonRollThread.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonRollThread.Location = new Point(950, 343);
             buttonRollThread.Name = "buttonRollThread";
             buttonRollThread.Size = new Size(75, 23);
