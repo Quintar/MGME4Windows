@@ -39,18 +39,21 @@ namespace Mythic_Game_Master_Emulator
 
         private void buttonDoAskFateQuestion_Click(object sender, EventArgs e)
         {
+            if (checkBoxAddAnswer.Checked) gme.SetAnswersFromString(richTextBoxFateAnswer.Text);
             gme.GenerateAnswer(comboBoxFateQuestion.Text, checkBoxAddAnswer.Checked);
             resetModelAndScroll();
         }
 
         private void buttonGenerateRandomEvent_Click(object sender, EventArgs e)
         {
+            if (checkBoxAddAnswer.Checked) gme.SetAnswersFromString(richTextBoxFateAnswer.Text);
             gme.GenerateRandomEvent();
             resetModelAndScroll();
         }
 
         private void buttonGenerateMeaning_Click(object sender, EventArgs e)
         {
+            if(checkBoxAddAnswer.Checked) gme.SetAnswersFromString(richTextBoxFateAnswer.Text);
             gme.GenerateMeaningFrom(getFilename1, getFilename2);
             resetModelAndScroll();
         }
@@ -75,7 +78,7 @@ namespace Mythic_Game_Master_Emulator
         {
             if (saveFileDialogAnswers.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(saveFileDialogAnswers.FileName, gme.FateModel.Answer);
+                File.WriteAllText(saveFileDialogAnswers.FileName, richTextBoxFateAnswer.Text);//gme.FateModel.Answer);
             }
 
         }
@@ -84,19 +87,21 @@ namespace Mythic_Game_Master_Emulator
         {
             if (openFileDialogAnswers.ShowDialog() == DialogResult.OK)
             {
-                gme.SetAnswersFrom(openFileDialogAnswers.FileName);
+                gme.SetAnswersFromFile(openFileDialogAnswers.FileName);
                 resetModelAndScroll();
             }
         }
 
         private void buttonRollAgainstChaosFactor_Click(object sender, EventArgs e)
         {
+            if (checkBoxAddAnswer.Checked) gme.SetAnswersFromString(richTextBoxFateAnswer.Text);
             gme.RollAgainstChaosFactor();
             resetModelAndScroll();
         }
 
         private void buttonRollPercentile_Click(object sender, EventArgs e)
         {
+            if (checkBoxAddAnswer.Checked) gme.SetAnswersFromString(richTextBoxFateAnswer.Text);
             gme.RollPercentileDice();
             resetModelAndScroll();
         }

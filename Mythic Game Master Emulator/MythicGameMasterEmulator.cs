@@ -62,9 +62,14 @@ namespace Mythic_Game_Master_Emulator
             myFm.AddToAnswer(lines1[myFm.RollDice] + " " + lines2[myFm.RollDice]);
         }
 
-        public void SetAnswersFrom(string filename)
+        public void SetAnswersFromFile(string filename)
         {
-            myFm.AddToAnswer(File.ReadAllText(filename));
+            myFm.AddToAnswer(File.ReadAllText(filename), true);
+        }
+
+        public void SetAnswersFromString(string text)
+        {
+            myFm.AddToAnswer(text, true);
         }
 
         public void SetThreadsFrom(string filename)
